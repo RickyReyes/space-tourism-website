@@ -1,0 +1,371 @@
+$clr-dark: #0B0D17;
+$clr-light: #D0D6F9;
+$white: #FFFFFF;
+
+$font-heading: "Bellefair";
+$font-body: "Barlow";
+$font-body-condensed: "Barlow Condensed";
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow&family=Bellefair&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background-image: url(../starter-code/assets/home/background-home-mobile.jpg);
+  position: relative;
+  padding: 20px 28px;
+  text-align: center;
+  background-size: 100% 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  font-family: $font-body;
+}
+
+.App.destinations {
+  background-image: url(../starter-code/assets/destination/background-destination-mobile.jpg);
+}
+
+.App.crew {
+  background-image: url(../starter-code/assets/crew/background-crew-mobile.jpg);
+}
+
+.App.technology {
+  padding: 0;
+  header {
+    padding: 20px 28px 0;
+  }
+  background-image: url(../starter-code/assets/technology/background-technology-mobile.jpg);
+}
+
+h1 {
+  font-family: $font-heading;
+  font-weight: 300;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: $font-body-condensed;
+  font-weight: 300;
+}
+
+h2 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 2.7px;
+  margin-top: 1rem;
+  span {
+    opacity: 0.25;
+    padding-right: .5rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo, .hamburger {
+    cursor: pointer;
+  }
+  .logo {
+    scale: (.8)
+  }
+}
+
+.heading {
+  font-family: $font-body-condensed;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $clr-light;
+  padding-top: 48px;
+  .space {
+    letter-spacing: 0px;
+    font-family: $font-heading;
+    display: block;
+    color: $white;
+    font-size: 80px;
+    padding: 1rem 0 1.5rem;
+    font-weight: 300;
+  }
+}
+
+.hero-p {
+  color: $white;
+  line-height: 25px;
+  color: $clr-light;
+  font-size: 15px;
+}
+
+.explore {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-heading;
+  font-size: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 0;
+  margin: 81px auto 0;
+  text-transform: uppercase;
+  a {
+    text-decoration: none;
+  }
+}
+
+.Destinations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding-bottom: 2.5rem;
+  .destination-image {
+    width: 160px;
+    height: 160px;
+    background-size: contain;
+    margin-top: 1.5rem;
+  }
+
+  .destination-image.Moon {
+    background-image: url(../starter-code/assets/destination/image-moon.png);
+  }
+
+  .destination-image.Mars {
+    background-image: url(../starter-code/assets/destination/image-mars.png);
+  }
+
+  .destination-image.Europa {
+    background-image: url(../starter-code/assets/destination/image-europa.png);
+  }
+
+  .destination-image.Titan {
+    background-image: url(../starter-code/assets/destination/image-titan.png);
+  }
+
+  .destinations-list, small {
+    display: flex;
+    gap: 1.5rem;
+    font-family: $font-body-condensed;
+    text-transform: uppercase;
+    color: $clr-light;
+    letter-spacing: 2.25px;
+    list-style-type: none;
+    font-size: .9rem;
+    margin-top: 1.75rem;
+    cursor: pointer;
+  }
+
+  .des-list-checkbox {
+    display: none;
+  }
+
+  .des-list-label {
+    cursor: pointer;
+    padding-bottom: .5rem;
+    border-bottom: 3px solid transparent;
+    
+  }
+
+  .des-list-checkbox:checked + .des-list-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid white;
+  }
+
+  .destination-name {
+    color: white;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .destination-description {
+    color: $clr-light;
+    font-size: .9rem;
+    line-height: 25px;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(white, .1);
+  }
+  small {
+    font-size: .775rem;
+  }
+  
+  h3 {
+    font-family: $font-heading;
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-top: .5rem;
+  }
+}
+
+/* crew */
+.Crew {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crew-member-photo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 222px;
+  width: 100%;
+  border-bottom: 1px solid rgba(white, .1);
+  margin-top: 1.75rem;
+  &.douglas-hurley {
+    background-image: url(../starter-code/assets/crew/image-douglas-hurley.png);
+  }
+  &.mark-shuttleworth {
+    background-image: url(../starter-code/assets/crew/image-mark-shuttleworth.png);
+  }
+  &.anousheh-ansari {
+    background-image: url(../starter-code/assets/crew/image-anousheh-ansari.png);
+  }
+  &.victor-glover {
+    background-image: url(../starter-code/assets/crew/image-victor-glover.png);
+  }
+}
+
+.bullets {
+  display: flex;
+  font-size: 2.5rem;
+  gap: 1rem;
+  color: white;
+  padding-top: .25rem;
+  .bullet:hover, .bullet:focus-visible {
+    cursor: pointer;
+  }
+}
+
+.crew-member-role {
+  color: rgba(white, 0.5);
+  font-size: 1rem;
+  font-family: $font-heading;
+  text-transform: uppercase;
+  padding: 1rem 0 .5rem;
+}
+
+.crew-member-name {
+  color: white;
+  font-family: $font-heading;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.crew-member-bio {
+  color: $clr-light;
+  padding: 1.25rem 1rem 5rem;
+  line-height: 25px;
+}
+
+.Technology {
+  .tech-image {
+    background-size: cover;
+    width: 100%;
+    height: 170px;
+    margin: 2rem 0 0;
+  }
+  .launch-vehicle-photo {
+    background-image: url(../starter-code/assets/technology/image-launch-vehicle-landscape.jpg);
+  }
+  .spaceport-photo {
+    background-image: url(../starter-code/assets/technology/image-spaceport-landscape.jpg);
+  }
+  .space-capsule-photo {
+    background-image: url(../starter-code/assets/technology/image-space-capsule-landscape.jpg);
+  }
+  .tech-toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  .tech-toggle-button {
+    cursor: pointer;
+    font-family: $font-heading;
+    border: 1px solid rgba(white, .3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+  }
+  h3 {
+    padding-top: 26px;
+    font-size: 14px;
+    letter-spacing: 2.3625px;
+    color: $clr-light;
+    text-transform: uppercase;
+  }
+  .tech-name {
+    color: white;
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding-top: .5rem;
+  }
+  .tech-description {
+    color: $clr-light;
+    padding: 20px 28px;
+    font-size: 15px;
+    line-height: 25px;
+    padding-bottom: 5rem;
+  }
+}
+
+
+.mobile-menu {
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  color: $white;
+  z-index: 10;
+  @supports (backdrop-filter: blur(81.5485px)) {
+    background: rgba(255, 255, 255, 0.04);
+    -webkit-backdrop-filter: blur(2em);
+    backdrop-filter: blur(2em);
+  }
+  @supports not (backdrop-filter: blur(81.5485px)) {
+    background-color: rgba(0, 0, 0, .9);
+  }
+  
+  ul {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-family: $font-body-condensed;
+    padding: 120px 32px;
+    text-align: left;
+    li {
+      padding-bottom: 32px;
+      cursor: pointer;
+      color: white;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  .number {
+    font-weight: bold;
+    font-style: 16px;
+    padding-right: 14px;
+  }
+  .close-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 36px;
+    right: 24px;
+  }
+} // end mobile menu

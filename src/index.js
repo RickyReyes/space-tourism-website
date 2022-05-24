@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Home from './routes/Home';
 import App from './App';
+import Destinations from './routes/Destinations';
+import Crew from './routes/Crew';
+import Technology from './routes/Technology';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="/" element={<Home />} />
+          <Route path="destinations" element={<Destinations />} />
+          <Route path="crew" element={<Crew />} />
+          <Route path="technology" element={<Technology />} />
+        </Route>
+        {/* <Route path="crew" element={<Crew />} />
+        <Route path="technologies" element={<Technologies />} /> */}
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
