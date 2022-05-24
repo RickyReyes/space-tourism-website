@@ -406,12 +406,13 @@ h2 span {
 }
 
 .mobile-menu ul li {
-  padding-bottom: 32px;
   cursor: pointer;
   color: white;
 }
 
 .mobile-menu ul li a {
+  display: inline-block;
+  padding: 16px 0;
   color: white;
   text-decoration: none;
 }
