@@ -61,7 +61,11 @@ h2 span {
   padding-right: .5rem;
 }
 
-.header {
+nav {
+  display: none;
+}
+
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,12 +77,38 @@ h2 span {
           justify-content: space-between;
 }
 
-.header .logo, .header .hamburger {
+header .logo, header .hamburger {
   cursor: pointer;
 }
 
-.header .logo {
+header .logo {
   scale: 0.8;
+}
+
+.Home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .heading {
@@ -104,6 +134,7 @@ h2 span {
   line-height: 25px;
   color: #D0D6F9;
   font-size: 15px;
+  max-width: 420px;
 }
 
 .explore {
@@ -129,6 +160,7 @@ h2 span {
 
 .explore a {
   text-decoration: none;
+  color: black;
 }
 
 .Destinations {
@@ -146,33 +178,51 @@ h2 span {
   padding-bottom: 2.5rem;
 }
 
-.Destinations .destination-image {
+.destination-flex,
+.destination-flex-left
+.destination-flex-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.destination-image {
   width: 160px;
   height: 160px;
   background-size: contain;
   margin-top: 1.5rem;
 }
 
-.Destinations .destination-image.Moon {
+.destination-image.Moon {
   background-image: url(../starter-code/assets/destination/image-moon.png);
 }
 
-.Destinations .destination-image.Mars {
+.destination-image.Mars {
   background-image: url(../starter-code/assets/destination/image-mars.png);
 }
 
-.Destinations .destination-image.Europa {
+.destination-image.Europa {
   background-image: url(../starter-code/assets/destination/image-europa.png);
 }
 
-.Destinations .destination-image.Titan {
+.destination-image.Titan {
   background-image: url(../starter-code/assets/destination/image-titan.png);
 }
 
-.Destinations .destinations-list, .Destinations small {
+.destinations-list, small {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 1.5rem;
   font-family: "Barlow Condensed";
   text-transform: uppercase;
@@ -181,20 +231,19 @@ h2 span {
   list-style-type: none;
   font-size: .9rem;
   margin-top: 1.75rem;
-  cursor: pointer;
 }
 
-.Destinations .des-list-checkbox {
+.des-list-checkbox {
   display: none;
 }
 
-.Destinations .des-list-label {
+.des-list-label {
   cursor: pointer;
   padding-bottom: .5rem;
   border-bottom: 3px solid transparent;
 }
 
-.Destinations .des-list-checkbox:checked + .des-list-label {
+.des-list-checkbox:checked + .des-list-label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,34 +256,76 @@ h2 span {
   border-bottom: 3px solid white;
 }
 
-.Destinations .destination-name {
+.destination-name {
   color: white;
   text-transform: uppercase;
   font-size: 3.5rem;
-  padding-top: 1.25rem;
+  margin-top: 1.25rem;
 }
 
-.Destinations .destination-description {
+.destination-description {
   color: #D0D6F9;
   font-size: .9rem;
   line-height: 25px;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 575px;
 }
 
-.Destinations small {
+small {
   font-size: .775rem;
 }
 
-.Destinations h3 {
+h3 {
   font-family: "Bellefair";
   text-transform: uppercase;
   font-size: 28px;
   margin-top: .5rem;
 }
 
+.destination-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  list-style-type: none;
+}
+
+.destination-stats .destination-stat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /* crew */
 .Crew {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crew-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,6 +446,7 @@ h2 span {
   letter-spacing: 2.3625px;
   color: #D0D6F9;
   text-transform: uppercase;
+  font-family: "Barlow Condensed";
 }
 
 .Technology .tech-name {
@@ -386,8 +478,8 @@ h2 span {
 @supports ((-webkit-backdrop-filter: blur(81.5485px)) or (backdrop-filter: blur(81.5485px))) {
   .mobile-menu {
     background: rgba(255, 255, 255, 0.04);
-    -webkit-backdrop-filter: blur(2em);
-    backdrop-filter: blur(2em);
+    backdrop-filter: blur(81.5485px);
+    -webkit-backdrop-filter: blur(81.5485px);
   }
 }
 
@@ -428,5 +520,245 @@ h2 span {
   position: absolute;
   top: 36px;
   right: 24px;
+}
+
+/* TABLET */
+@media screen and (min-width: 720px) {
+  .App {
+    background-image: url(../starter-code/assets/home/background-home-tablet.jpg);
+    padding: 2rem 3rem;
+  }
+  .App.destinations {
+    background-image: url(../starter-code/assets/destination/background-destination-tablet.jpg);
+  }
+  .App.crew {
+    background-image: url(../starter-code/assets/crew/background-crew-tablet.jpg);
+  }
+  .App.technology {
+    background-image: url(../starter-code/assets/technology/background-technology-tablet.jpg);
+  }
+  .hamburger, .mobile-menu {
+    display: none;
+  }
+  nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 37px;
+    font-family: "Barlow Condensed";
+    text-transform: uppercase;
+    padding: 0 3rem;
+    list-style-type: none;
+  }
+  nav ul a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2.3625px;
+    padding: 2.5rem 0;
+  }
+  h2 {
+    font-size: 20px;
+    padding-top: 2.5rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .heading {
+    font-size: 20px;
+    padding-top: 6rem;
+  }
+  .heading .space {
+    font-size: 150px;
+    padding-bottom: .5rem;
+  }
+  .explore {
+    width: 240px;
+    height: 240px;
+    font-size: 2rem;
+  }
+  /* <Destination /> */
+  .destination-image {
+    margin-top: 3rem;
+    width: 300px;
+    height: 300px;
+  }
+  .destinations-list {
+    gap: 2.25rem;
+    margin-top: 3.5rem;
+    font-size: 1rem;
+  }
+  .destination-name {
+    font-size: 5rem;
+    margin-top: 2rem;
+  }
+  .destination-stats {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  /* <Crew /> */
+  .App.crew {
+    height: 100%;
+    padding-bottom: 0;
+  }
+  .Crew {
+    height: 100%;
+  }
+  .crew-flex {
+    width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .bullets {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .crew-member-photo {
+    height: 400px;
+    position: relative;
+    bottom: 0;
+    margin-top: 2rem;
+  }
+  .crew-member-role {
+    font-size: 1.5rem;
+  }
+  .crew-member-name {
+    font-size: 2.5rem;
+  }
+  .crew-member-bio {
+    padding: 0;
+    max-width: 520px;
+  }
+  /* <Technology /> */
+  .Technology {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Technology h2 {
+    padding-left: 3rem;
+  }
+  .Technology .tech-name {
+    font-size: 40px;
+  }
+  .Technology p {
+    font-size: 16px;
+    max-width: 465px;
+  }
+  .Technology .tech-image {
+    height: 310px;
+    background-size: cover;
+  }
+}
+
+/* end tablet media query */
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+  .App {
+    background-image: url(../starter-code/assets/home/background-home-desktop.jpg);
+  }
+  /* home page */
+  .home-flex {
+    width: 82vw;
+    max-width: 1800px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 8vw;
+  }
+  .home-flex-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: left;
+  }
+  .hero-p {
+    font-size: 18px;
+    line-height: 32px;
+    max-width: 450px;
+  }
+  .explore {
+    width: 275px;
+    height: 275px;
+  }
+  h2 {
+    font-size: 28px;
+    padding-top: 2.5rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .destination-flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 157px;
+    margin-top: 4rem;
+  }
+  .destination-flex-left {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .destination-image {
+    width: 445px;
+    height: 445px;
+  }
+  .destinations-list {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .destination-name {
+    text-align: start;
+    font-size: 100px;
+  }
+  .destination-description {
+    text-align: start;
+    max-width: 360px;
+    font-size: 18px;
+    line-height: 32px;
+  }
 }
 /*# sourceMappingURL=App.css.map */

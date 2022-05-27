@@ -20,7 +20,8 @@ export default function Destinations() {
                defaultChecked={currentDestination == des.name}>
         </input>
         <label htmlFor={des.name} 
-               onClick={() => setCurrentDestination(des.name)} className="des-list-label">
+               onClick={() => setCurrentDestination(des.name)} 
+               className="des-list-label">
                   {des.name}
         </label>
       </li>
@@ -29,16 +30,28 @@ export default function Destinations() {
   return (
     <div className="Destinations">
       <h2><span className="number">01</span> Pick your destination</h2>
-      <div className={"destination-image " + destinationObj.name} alt="destination image" />
-      <ul className="destinations-list">
-        {destinationsList}
-      </ul>
-      <h1 className="destination-name">{destinationObj.name}</h1>
-      <p className="destination-description">{destinationObj.description}</p>
-      <small>Avg. Distance</small>
-      <h3>{destinationObj.distance}</h3>
-      <small>Est. Travel Time</small>
-      <h3>{destinationObj.travel}</h3>
+      <div className="destination-flex">
+        <div className="destination-flex-left">
+          <div className={"destination-image " + destinationObj.name} alt="destination image" />
+        </div>
+        <div className="destination-flex-right">
+          <ul className="destinations-list">
+            {destinationsList}
+          </ul>
+          <h1 className="destination-name">{destinationObj.name}</h1>
+          <p className="destination-description">{destinationObj.description}</p>
+          <ul className="destination-stats">
+            <li className="destination-stat">
+              <small>Avg. Distance</small>
+              <h3>{destinationObj.distance}</h3>
+            </li>
+            <li className="destination-stat">
+              <small>Est. Travel Time</small>
+              <h3>{destinationObj.travel}</h3>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   )
 }
