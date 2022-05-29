@@ -25,13 +25,15 @@ export default function Crew() {
       <h2><span className="number">02</span> Meet your crew</h2>
       <div className="crew-flex">
         <div className={"crew-member-photo " + snakeCaseName}></div>
-        <div className="bullets">
-          {bullets}
-        </div>
-        <div className="crew-member-info">
-          <h3 className="crew-member-role">{crewMemberObj.role}</h3>
-          <h4 className="crew-member-name">{crewMemberObj.name}</h4>
-          <p className="crew-member-bio">{crewMemberObj.bio}</p>
+        <div className="bullets-and-info">
+          <div className="bullets">
+            {bullets}
+          </div>
+          <div className="crew-member-info">
+            <h3 className="crew-member-role">{crewMemberObj.role}</h3>
+            <h4 className="crew-member-name">{crewMemberObj.name}</h4>
+            <p className="crew-member-bio">{crewMemberObj.bio}</p>
+          </div>
         </div>
       </div>
     </div>

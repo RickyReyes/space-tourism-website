@@ -5,21 +5,25 @@ export default function Header({ setShowMobileMenu }) {
   return (
     <header className="header">
       <nav>
-        <ul>
+        <ul className="nav-list">
             <li>
               <NavLink style={({ isActive }) => ({
                         borderBottom: isActive ? '2px solid white' : '0'
                       })}
-                      to="/" onClick={() => setShowMobileMenu(false)}>
-                Home
+                      to="/" 
+                      onClick={() => setShowMobileMenu(false)}
+                      className="nav-link">
+                <span className="nav-number">00 </span>Home
               </NavLink>
             </li>
             <li>
               <NavLink style={({ isActive }) => ({
                         borderBottom: isActive ? '2px solid white' : '0'
                       })}
-                      to="/destinations" onClick={() => setShowMobileMenu(false)}>
-                Destination
+                      to="/destinations" 
+                      onClick={() => setShowMobileMenu(false)}
+                      className="nav-link">
+                <span className="nav-number">01 </span>Destination
               </NavLink>
             </li>
         
@@ -27,8 +31,10 @@ export default function Header({ setShowMobileMenu }) {
               <NavLink style={({ isActive }) => ({
                         borderBottom: isActive ? '2px solid white' : '0'
                       })}
-                      to="/crew" onClick={() => setShowMobileMenu(false)}>
-                Crew
+                      to="/crew" 
+                      onClick={() => setShowMobileMenu(false)}
+                      className="nav-link">
+                <span className="nav-number">02 </span>Crew
               </NavLink>
             </li>
 
@@ -36,8 +42,10 @@ export default function Header({ setShowMobileMenu }) {
               <NavLink style={({ isActive }) => ({
                         borderBottom: isActive ? '2px solid white' : '0'
                       })}
-                      to="/technology" onClick={() => setShowMobileMenu(false)}>
-               Technology
+                      to="/technology" 
+                      onClick={() => setShowMobileMenu(false)}
+                      className="nav-link">
+               <span className="nav-number">03 </span>Technology
               </NavLink>
             </li>
           </ul>

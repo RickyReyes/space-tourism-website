@@ -34,6 +34,7 @@ $font-body-condensed: "Barlow Condensed";
 
 .App.crew {
   background-image: url(../starter-code/assets/crew/background-crew-mobile.jpg);
+  overflow-y: hidden;
 }
 
 .App.technology {
@@ -178,7 +179,7 @@ header {
   background-image: url(../starter-code/assets/destination/image-titan.png);
 }
 
-.destinations-list, small {
+.destinations-list {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
@@ -199,7 +200,6 @@ header {
   cursor: pointer;
   padding-bottom: .5rem;
   border-bottom: 3px solid transparent;
-  
 }
 
 .des-list-checkbox:checked + .des-list-label {
@@ -218,37 +218,44 @@ header {
 
 .destination-description {
   color: $clr-light;
-  font-size: .9rem;
+  font-size: .9375rem;
   line-height: 25px;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(white, .1);
   max-width: 575px;
 }
-small {
-  font-size: .775rem;
-}
-
-h3 {
-  font-family: $font-heading;
-  text-transform: uppercase;
-  font-size: 28px;
-  margin-top: .5rem;
-}
 
 .destination-stats {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  list-style-type: none;
-  .destination-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	list-style-type: none;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-/* crew */
+.destination-stat {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+.destination-stat > small {
+  font-size: .875rem;
+  color: $clr-light;
+  font-family: $font-body-condensed;
+  letter-spacing: 2.3625px;
+}
+
+.destination-stat > h3 {
+  font-family: $font-heading;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  padding-top: .75rem;
+}
+
+/* <Crew /> */
 .Crew {
   display: flex;
   flex-direction: column;
@@ -260,7 +267,6 @@ h3 {
   flex-direction: column;
   align-items: center;
 }
-
 
 .crew-member-photo {
   background-size: contain;
@@ -282,6 +288,12 @@ h3 {
   &.victor-glover {
     background-image: url(../starter-code/assets/crew/image-victor-glover.png);
   }
+}
+
+.bullets-and-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bullets {
@@ -316,60 +328,64 @@ h3 {
   line-height: 25px;
 }
 
-.Technology {
-  .tech-image {
-    background-size: cover;
-    width: 100%;
-    height: 170px;
-    margin: 2rem 0 0;
-  }
-  .launch-vehicle-photo {
-    background-image: url(../starter-code/assets/technology/image-launch-vehicle-landscape.jpg);
-  }
-  .spaceport-photo {
-    background-image: url(../starter-code/assets/technology/image-spaceport-landscape.jpg);
-  }
-  .space-capsule-photo {
-    background-image: url(../starter-code/assets/technology/image-space-capsule-landscape.jpg);
-  }
-  .tech-toggle-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 2rem;
-  }
-  .tech-toggle-button {
-    cursor: pointer;
-    font-family: $font-heading;
-    border: 1px solid rgba(white, .3);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    color: white;
-  }
-  h3 {
-    padding-top: 26px;
-    font-size: 14px;
-    letter-spacing: 2.3625px;
-    color: $clr-light;
-    text-transform: uppercase;
-    font-family: $font-body-condensed;
-  }
-  .tech-name {
-    color: white;
-    font-family: $font-heading;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    padding-top: .5rem;
-  }
-  .tech-description {
-    color: $clr-light;
-    padding: 20px 28px;
-    font-size: 15px;
-    line-height: 25px;
-    padding-bottom: 5rem;
-  }
+.tech-image {
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+  margin: 2rem 0 0;
+}
+.launch-vehicle-photo {
+  background-image: url(../starter-code/assets/technology/image-launch-vehicle-landscape.jpg);
+}
+.spaceport-photo {
+  background-image: url(../starter-code/assets/technology/image-spaceport-landscape.jpg);
+}
+.space-capsule-photo {
+  background-image: url(../starter-code/assets/technology/image-space-capsule-landscape.jpg);
+}
+.tech-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+.tech-toggle-button {
+  cursor: pointer;
+  font-family: $font-heading;
+  border: 1px solid rgba(white, .3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+}
+.tech-info {
+  padding-top: 1.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tech-info > small {
+  font-size: .875rem;
+  font-family: $font-body-condensed;
+  text-transform: uppercase;
+  letter-spacing: 2.3625px;
+  color: $clr-light;
+}
+.tech-name {
+  color: white;
+  font-family: $font-heading;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding-top: .5rem;
+}
+.tech-description {
+  color: $clr-light;
+  padding: 20px 24px;
+  font-size: .9375rem;
+  line-height: 25px;
+  padding-bottom: 5rem;
+  max-width: 400px;
 }
 
 .mobile-menu {
@@ -419,7 +435,6 @@ h3 {
   }
 } // end mobile menu
 
-
 /* TABLET */
 
 @media screen and (min-width: 720px) {
@@ -450,21 +465,26 @@ h3 {
     top: 0;
     right: 0;
     background-color: rgba(255, 255, 255, .05);
-    ul {
-      display: flex;
-      gap: 37px;
-      font-family: $font-body-condensed;
-      text-transform: uppercase;
-      padding: 0 3rem;
-      a {
-        display: inline-block;
-        color: white;
-        text-decoration: none;
-        letter-spacing: 2.3625px;
-        padding: 2.5rem 0;
-      }
-      list-style-type: none;
+  }
+
+  .nav-list {
+    padding: 0 3rem;
+    list-style-type: none;
+    display: flex;
+    gap: 3rem;
+    font-family: $font-body-condensed;
+    text-transform: uppercase;
+    .nav-link {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2.3625px;
+      padding: 2.5rem 0;
     }
+  }
+
+  .nav-number {
+    display: none;
   }
 
   h2 {
@@ -503,6 +523,9 @@ h3 {
     font-size: 5rem;
     margin-top: 2rem;
   }
+  .destination-description {
+    font-size: 1rem;
+  }
   .destination-stats {
     flex-direction: row;
     gap: 5rem;
@@ -523,14 +546,17 @@ h3 {
     flex-direction: column-reverse;
     justify-content: flex-end;
   }
-  .bullets {
-    align-self: center;
-  }
 
+  .bullets-and-info {
+    flex-direction: column-reverse;
+  }
+  .bullets {
+    font-size: 3rem;
+  }
   .crew-member-photo {
     height: 400px;
     position: relative;
-    bottom: 0;
+    bottom: -35px;
     margin-top: 2rem;
   }
   .crew-member-role {
@@ -539,7 +565,6 @@ h3 {
   .crew-member-name {
     font-size: 2.5rem;
   }
-
   .crew-member-bio {
     padding: 0;
     max-width: 520px;
@@ -552,29 +577,82 @@ h3 {
     h2 {
       padding-left: 3rem;
     }
-    .tech-name {
-      font-size: 40px;
-    }
-    p {
-      font-size: 16px;
-      max-width: 465px;
-    }
-    .tech-image {
-      height: 310px;
-      background-size: cover;
-    }
   }
-
-
-
+  .tech-description {
+    font-size: 16px;
+    max-width: 500px;
+  }
+  .tech-name {
+    font-size: 40px;
+  }
+  .tech-image {
+    height: 310px;
+    background-size: cover;
+  }
+  .tech-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .tech-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 } /* end tablet media query */
 
 /* DESKTOP */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1350px) {
   .App {
     background-image: url(../starter-code/assets/home/background-home-desktop.jpg);
+    position: relative;
+  }
+  .App.destinations {
+    background-image: url(../starter-code/assets/destination/background-destination-desktop.jpg);
+  }
+  .App.crew {
+    background-image: url(../starter-code/assets/crew/background-crew-desktop.jpg);
+  }
+  .App.technology {
+    background-image: url(../starter-code/assets/technology/background-technology-desktop.jpg);
+  }
+
+  header {
+    top: 0;
+  }
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .nav-list {
+    gap: 3rem;
+    padding-left: 7.7rem;
+    padding-right: 10.5rem;
+  }
+
+  /* horizontal line (nav) */
+  header::before {
+    content: '';
+    position: absolute;
+    background-color:rgba(255, 255, 255, .25);
+    height: 1px;
+    width: 40vw;
+    transform: translateY(-50%);
+    left: calc(3rem + 5%);
+  }
+
+  .nav-number {
+    display: inline-block;
+    font-weight: bold;
+    padding-right: .75rem;
+  }
+
+  h2 {
+    padding-left: 5%;
   }
 /* home page */
+
   .home-flex {
     width: 82vw;
     max-width: 1800px;
@@ -598,15 +676,17 @@ h3 {
   }
 
   .explore {
-      width: 275px;
-      height: 275px;
+    width: 275px;
+    height: 275px;
   }
 
   h2 {
     font-size: 28px;
     padding-top: 2.5rem;
     align-self: flex-start;
+    letter-spacing: 4.725px;
   }
+
   .destination-flex {
     flex-direction: row;
     gap: 157px;
@@ -628,8 +708,110 @@ h3 {
   }
   .destination-description {
     text-align: start;
-    max-width: 360px;
+    max-width: 450px;
     font-size: 18px;
     line-height: 32px;
+  }
+  .destination-stats {
+    justify-content: flex-start;
+  }
+
+  .destination-stat {
+    align-items: flex-start;
+  }
+
+  /* <Crew /> */
+  .crew-flex {
+    flex-direction: row-reverse;
+    padding: 0 5%;
+  }
+  .crew-flex > * {
+    flex: 1;
+  }
+  .bullets-and-info {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .crew-member-role {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+  .crew-member-name {
+    font-size: 3.5rem;
+    padding: 1rem 0 1.4rem;
+  }
+  .crew-member-bio {
+    font-size: 1.125rem;
+    line-height: 32px;
+  }
+  .bullets {
+    padding-top: 5rem;
+    font-size: 4rem;
+  }
+  .crew-member-photo {
+    height: 750px;
+  }
+
+  /* <Technology /> */
+  .Technology {
+    padding: 5%;
+    padding-top: 0;
+    padding-right: 0;
+  }
+  .tech-flex {
+    padding: 3rem;
+    padding-right: 0;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tech-buttons-and-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tech-toggle-buttons {
+    flex-direction: column;
+  }
+  .tech-toggle-button {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  .tech-image {
+    width: 40vw;
+    height: 40vw;
+    max-width: 600px;
+    max-height: 600px;
+  }
+  .tech-info {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5vw;
+  }
+  .tech-name {
+    font-size: 3.5rem;
+    padding: .75rem 0 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+  .tech-description {
+    line-height: 32px;
+    font-size: 18px;
+    padding: 0;
+    max-width: 450px;
+  }
+  .launch-vehicle-photo {
+    background-image: url(../starter-code/assets/technology/image-launch-vehicle-portrait.jpg);
+  }
+  .spaceport-photo {
+    background-image: url(../starter-code/assets/technology/image-spaceport-portrait.jpg);
+  }
+  .space-capsule-photo {
+    background-image: url(../starter-code/assets/technology/image-space-capsule-portrait.jpg);
   }
 }

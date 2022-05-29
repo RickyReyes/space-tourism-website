@@ -23,15 +23,22 @@ export default function Technology() {
   return (
     <div className="Technology">
       <h2><span className="number">03</span> Space launch 101</h2>
-      <div className={"tech-image " + snakeCaseName + "-photo"}></div>
-      <div className="tech-toggle-buttons">
-        {buttons}
+      <div className="tech-flex">
+        <div className={"tech-image " + snakeCaseName + "-photo"}>
+        </div>
+        <div className="tech-buttons-and-info">
+          <div className="tech-toggle-buttons">
+            {buttons}
+          </div>
+          <div className="tech-info">
+            <small>The terminology...</small>
+            <h4 className="tech-name">{techObj.name}</h4>
+            <p className="tech-description">
+              {techObj.description}
+            </p>
+          </div>
+        </div>
       </div>
-      <h3>The terminology...</h3>
-      <h4 className="tech-name">{techObj.name}</h4>
-      <p className="tech-description">
-        {techObj.description}
-      </p>
     </div>
   )
 }
