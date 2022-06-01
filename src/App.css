@@ -208,6 +208,7 @@ header .logo {
           justify-content: center;
   font-family: "Bellefair";
   background-color: white;
+  color: black;
   font-size: 20px;
   width: 150px;
   height: 150px;
@@ -306,7 +307,12 @@ header .logo {
   border-bottom: 3px solid transparent;
 }
 
-.des-list-checkbox:checked + .des-list-label {
+.des-list-checkbox:hover + .des-list-label {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.des-list-checkbox:checked + .des-list-label,
+.des-list-checkbox:focus-visible + .des-list-label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,10 +323,6 @@ header .logo {
       -ms-flex-pack: center;
           justify-content: center;
   border-bottom: 3px solid white;
-}
-
-.des-list-checkbox:hover + .des-list-label {
-  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
 
 .destination-name {
