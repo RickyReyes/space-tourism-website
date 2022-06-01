@@ -12,13 +12,6 @@ export default function Crew() {
   }
 
   const bullets = crewArr.map((member, idx) => (
-  //     <div className="bullet" 
-  //          style={{opacity: member.name == crewMemberObj.name ? 1 : .2}}
-  //          onClick={() => handleToggle(idx)}
-  //          key={idx}>
-  //       &#x2022;
-  //     </div>
-
       <li className="crew-bullet" key={member.name}>
         <input onClick={() => handleToggle(idx)}
                className="crew-bullet-checkbox"
