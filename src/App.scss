@@ -8,6 +8,9 @@ $font-body-condensed: "Barlow Condensed";
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow&family=Bellefair&display=swap');
 
+:root {
+  background-color: black;
+}
 *,
 *::before,
 *::after {
@@ -72,6 +75,17 @@ $font-body-condensed: "Barlow Condensed";
   height: 100%;
   min-height: 100vh;
   font-family: $font-body;
+  animation: app-fade 2000ms ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes app-fade {
+  from {
+    filter: brightness(0%)
+  }
+  to {
+    filter: brightness(100%)
+  }
 }
 
 .App.destinations {
