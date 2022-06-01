@@ -24,7 +24,8 @@ export default function Crew() {
                className="crew-bullet-checkbox"
                id={member.name}
                type="radio" 
-               name="member">
+               name="member"
+               defaultChecked={idx === currentCrewMember}>
         </input>
         <label className="crew-bullet-label"
                htmlFor={member.name}>
