@@ -164,7 +164,6 @@ header {
   justify-content: center;
   font-family: $font-heading;
   background-color: white;
-  color: black;
   font-size: 20px;
   width: 150px;
   height: 150px;
@@ -232,8 +231,7 @@ header {
   padding-bottom: .5rem;
   border-bottom: 3px solid transparent;
 }
-
-.des-list-checkbox:hover + .des-list-label {
+.des-list-label:hover {
   border-bottom: 3px solid rgba(white, .5);
 }
 .des-list-checkbox:checked + .des-list-label,
@@ -316,21 +314,37 @@ header {
     background-image: url(../starter-code/assets/crew/image-victor-glover.png);
   }
 }
-.bullets-and-info {
+.crew-bullets-and-info {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.bullets {
+.crew-bullets {
   display: flex;
   font-size: 2.5rem;
   gap: 1rem;
   color: white;
   padding-top: .25rem;
-  .bullet:hover, .bullet:focus-visible {
+  list-style-type: none;
+  .crew-bullet:hover, .crew-bullet:focus-visible {
     cursor: pointer;
   }
 }
+.crew-bullet-checkbox {
+  display: none
+}
+.crew-bullet-label {
+  user-select: none;
+  cursor: pointer;
+  opacity: .17;
+}
+.crew-bullet-label:hover {
+  opacity: 0.5;
+}
+.crew-bullet-checkbox:checked + .crew-bullet-label {
+  opacity: 1;
+}
+
 .crew-member-role {
   color: rgba(white, 0.5);
   font-size: 1rem;
@@ -525,10 +539,10 @@ header {
     flex-direction: column-reverse;
     justify-content: flex-end;
   }
-  .bullets-and-info {
+  .crew-bullets-and-info {
     flex-direction: column-reverse;
   }
-  .bullets {
+  .crew-bullets {
     font-size: 3rem;
   }
   .crew-member-photo {
@@ -702,7 +716,7 @@ header {
   .crew-flex > * {
     flex: 1;
   }
-  .bullets-and-info {
+  .crew-bullets-and-info {
     align-items: flex-start;
     text-align: left;
   }
@@ -719,7 +733,7 @@ header {
     font-size: 1.125rem;
     line-height: 32px;
   }
-  .bullets {
+  .crew-bullets {
     padding-top: 5rem;
     font-size: 4rem;
   }

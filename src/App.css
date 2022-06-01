@@ -208,7 +208,6 @@ header .logo {
           justify-content: center;
   font-family: "Bellefair";
   background-color: white;
-  color: black;
   font-size: 20px;
   width: 150px;
   height: 150px;
@@ -307,7 +306,7 @@ header .logo {
   border-bottom: 3px solid transparent;
 }
 
-.des-list-checkbox:hover + .des-list-label {
+.des-list-label:hover {
   border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -435,7 +434,7 @@ header .logo {
   background-image: url(../starter-code/assets/crew/image-victor-glover.png);
 }
 
-.bullets-and-info {
+.crew-bullets-and-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -448,7 +447,7 @@ header .logo {
           align-items: center;
 }
 
-.bullets {
+.crew-bullets {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -456,10 +455,32 @@ header .logo {
   gap: 1rem;
   color: white;
   padding-top: .25rem;
+  list-style-type: none;
 }
 
-.bullets .bullet:hover, .bullets .bullet:focus-visible {
+.crew-bullets .crew-bullet:hover, .crew-bullets .crew-bullet:focus-visible {
   cursor: pointer;
+}
+
+.crew-bullet-checkbox {
+  display: none;
+}
+
+.crew-bullet-label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  opacity: .17;
+}
+
+.crew-bullet-label:hover {
+  opacity: 0.5;
+}
+
+.crew-bullet-checkbox:checked + .crew-bullet-label {
+  opacity: 1;
 }
 
 .crew-member-role {
@@ -692,13 +713,13 @@ header .logo {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .bullets-and-info {
+  .crew-bullets-and-info {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  .bullets {
+  .crew-bullets {
     font-size: 3rem;
   }
   .crew-member-photo {
@@ -916,7 +937,7 @@ header .logo {
         -ms-flex: 1;
             flex: 1;
   }
-  .bullets-and-info {
+  .crew-bullets-and-info {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -935,7 +956,7 @@ header .logo {
     font-size: 1.125rem;
     line-height: 32px;
   }
-  .bullets {
+  .crew-bullets {
     padding-top: 5rem;
     font-size: 4rem;
   }
