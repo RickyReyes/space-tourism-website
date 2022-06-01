@@ -21,7 +21,7 @@ export default function Crew() {
   ))
 
   return (
-    <div className="Crew">
+    <main className="Crew">
       <h2><span className="number">02</span> Meet your crew</h2>
       <div className="crew-flex">
         <div className={"crew-member-photo " + snakeCaseName}></div>
@@ -36,6 +36,6 @@ export default function Crew() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }

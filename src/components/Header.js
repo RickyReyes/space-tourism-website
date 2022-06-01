@@ -7,42 +7,30 @@ export default function Header({ setShowMobileMenu }) {
       <nav>
         <ul className="nav-list">
             <li>
-              <NavLink style={({ isActive }) => ({
-                        borderBottom: isActive ? '2px solid white' : '0'
-                      })}
-                      to="/" 
+              <NavLink to="/" 
                       onClick={() => setShowMobileMenu(false)}
-                      className="nav-link">
+                      className={({isActive}) => ["nav-link", isActive ? "active" : null]
+                      .filter(Boolean)
+                      .join(" ")}>
                 <span className="nav-number">00 </span>Home
               </NavLink>
             </li>
             <li>
-              <NavLink style={({ isActive }) => ({
-                        borderBottom: isActive ? '2px solid white' : '0'
-                      })}
-                      to="/destinations" 
+              <NavLink to="/destinations" 
                       onClick={() => setShowMobileMenu(false)}
                       className="nav-link">
                 <span className="nav-number">01 </span>Destination
               </NavLink>
             </li>
-        
             <li>
-              <NavLink style={({ isActive }) => ({
-                        borderBottom: isActive ? '2px solid white' : '0'
-                      })}
-                      to="/crew" 
+              <NavLink to="/crew" 
                       onClick={() => setShowMobileMenu(false)}
                       className="nav-link">
                 <span className="nav-number">02 </span>Crew
               </NavLink>
             </li>
-
             <li>
-              <NavLink style={({ isActive }) => ({
-                        borderBottom: isActive ? '2px solid white' : '0'
-                      })}
-                      to="/technology" 
+              <NavLink to="/technology" 
                       onClick={() => setShowMobileMenu(false)}
                       className="nav-link">
                <span className="nav-number">03 </span>Technology

@@ -16,19 +16,16 @@ export default function MobileMenu({setShowMobileMenu}) {
                 <span className="number">01</span> Destination
               </Link>
             </li>
-        
             <li>
               <Link to="/crew" onClick={() => setShowMobileMenu(false)}>
                 <span className="number">02</span> Crew
               </Link>
             </li>
-
             <li>
               <Link to="/technology" onClick={() => setShowMobileMenu(false)}>
                 <span className="number">03</span> Technology
               </Link>
             </li>
-
           </ul>
         </div>
   )

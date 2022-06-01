@@ -8,6 +8,63 @@
           box-sizing: border-box;
 }
 
+.mobile-menu {
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  color: #FFFFFF;
+  z-index: 10;
+}
+
+@supports ((-webkit-backdrop-filter: blur(81.5485px)) or (backdrop-filter: blur(81.5485px))) {
+  .mobile-menu {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+    -webkit-backdrop-filter: blur(81.5485px);
+  }
+}
+
+@supports not ((-webkit-backdrop-filter: blur(81.5485px)) or (backdrop-filter: blur(81.5485px))) {
+  .mobile-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.mobile-menu ul {
+  list-style-type: none;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed";
+  padding: 120px 32px;
+  text-align: left;
+}
+
+.mobile-menu ul li {
+  cursor: pointer;
+  color: white;
+}
+
+.mobile-menu ul li a {
+  display: inline-block;
+  padding: 16px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-menu .number {
+  font-weight: bold;
+  font-style: 16px;
+  padding-right: 14px;
+}
+
+.mobile-menu .close-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 36px;
+  right: 24px;
+}
+
 .App {
   background-image: url(../starter-code/assets/home/background-home-mobile.jpg);
   position: relative;
@@ -16,7 +73,6 @@
   background-size: 100% 100%;
   height: 100%;
   min-height: 100vh;
-  min-width: 100%;
   font-family: "Barlow";
 }
 
@@ -41,6 +97,7 @@
 h1 {
   font-family: "Bellefair";
   font-weight: 300;
+  font-size: 1rem;
 }
 
 h2, h3, h4, h5, h6 {
@@ -150,17 +207,22 @@ header .logo {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: "Bellefair";
+  background-color: white;
   font-size: 20px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 0;
-  margin: 81px auto 0;
+  margin-top: 81px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
-.explore a {
-  text-decoration: none;
+.explore:hover {
+  -webkit-box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.1);
+          box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.1);
+}
+
+.explore:visited {
   color: black;
 }
 
@@ -257,6 +319,10 @@ header .logo {
   border-bottom: 3px solid white;
 }
 
+.des-list-checkbox:hover + .des-list-label {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
 .destination-name {
   color: white;
   text-transform: uppercase;
@@ -315,7 +381,6 @@ header .logo {
   padding-top: .75rem;
 }
 
-/* <Crew /> */
 .Crew {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -449,12 +514,16 @@ header .logo {
 .tech-toggle-button {
   cursor: pointer;
   font-family: "Bellefair";
-  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   width: 40px;
   height: 40px;
   background-color: transparent;
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-toggle-button:hover {
+  border: 1px solid white;
 }
 
 .tech-info {
@@ -496,63 +565,6 @@ header .logo {
   max-width: 400px;
 }
 
-.mobile-menu {
-  position: absolute;
-  min-height: 100vh;
-  top: 0;
-  right: 0;
-  width: 70vw;
-  color: #FFFFFF;
-  z-index: 10;
-}
-
-@supports ((-webkit-backdrop-filter: blur(81.5485px)) or (backdrop-filter: blur(81.5485px))) {
-  .mobile-menu {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(81.5485px);
-    -webkit-backdrop-filter: blur(81.5485px);
-  }
-}
-
-@supports not ((-webkit-backdrop-filter: blur(81.5485px)) or (backdrop-filter: blur(81.5485px))) {
-  .mobile-menu {
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-}
-
-.mobile-menu ul {
-  list-style-type: none;
-  text-transform: uppercase;
-  font-family: "Barlow Condensed";
-  padding: 120px 32px;
-  text-align: left;
-}
-
-.mobile-menu ul li {
-  cursor: pointer;
-  color: white;
-}
-
-.mobile-menu ul li a {
-  display: inline-block;
-  padding: 16px 0;
-  color: white;
-  text-decoration: none;
-}
-
-.mobile-menu .number {
-  font-weight: bold;
-  font-style: 16px;
-  padding-right: 14px;
-}
-
-.mobile-menu .close-icon {
-  cursor: pointer;
-  position: absolute;
-  top: 36px;
-  right: 24px;
-}
-
 /* TABLET */
 @media screen and (min-width: 720px) {
   .App {
@@ -567,6 +579,9 @@ header .logo {
   }
   .App.technology {
     background-image: url(../starter-code/assets/technology/background-technology-tablet.jpg);
+  }
+  .App.technology header {
+    padding: 2rem 3rem 0;
   }
   .hamburger, .mobile-menu {
     display: none;
@@ -588,12 +603,18 @@ header .logo {
     font-family: "Barlow Condensed";
     text-transform: uppercase;
   }
+  .nav-list .active {
+    border-bottom: 2px solid white;
+  }
   .nav-list .nav-link {
     display: inline-block;
     color: white;
     text-decoration: none;
     letter-spacing: 2.3625px;
     padding: 2.5rem 0;
+  }
+  .nav-list .nav-link:hover:not(.active) {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   }
   .nav-number {
     display: none;
@@ -616,8 +637,12 @@ header .logo {
     width: 240px;
     height: 240px;
     font-size: 2rem;
+    margin-bottom: 90px;
   }
-  /* <Destination /> */
+  .explore:hover {
+    -webkit-box-shadow: 0px 0px 0px 60px rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 0px 0px 60px rgba(255, 255, 255, 0.1);
+  }
   .destination-image {
     margin-top: 3rem;
     width: 300px;
@@ -645,7 +670,6 @@ header .logo {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  /* <Crew /> */
   .App.crew {
     height: 100%;
     padding-bottom: 0;
@@ -691,7 +715,6 @@ header .logo {
     padding: 0;
     max-width: 520px;
   }
-  /* <Technology /> */
   .Technology {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -742,7 +765,6 @@ header .logo {
   }
 }
 
-/* end tablet media query */
 /* DESKTOP */
 @media screen and (min-width: 1350px) {
   .App {
@@ -790,7 +812,6 @@ header .logo {
   h2 {
     padding-left: 5%;
   }
-  /* home page */
   .home-flex {
     width: 82vw;
     max-width: 1800px;
@@ -826,6 +847,11 @@ header .logo {
   .explore {
     width: 275px;
     height: 275px;
+    margin-bottom: 0;
+  }
+  .explore:hover {
+    -webkit-box-shadow: 0px 0px 0px 88px rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 0px 0px 88px rgba(255, 255, 255, 0.1);
   }
   h2 {
     font-size: 28px;
@@ -876,7 +902,6 @@ header .logo {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  /* <Crew /> */
   .crew-flex {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -915,7 +940,6 @@ header .logo {
   .crew-member-photo {
     height: 750px;
   }
-  /* <Technology /> */
   .Technology {
     padding: 5%;
     padding-top: 0;

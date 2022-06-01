@@ -3,14 +3,10 @@ import data from '../data'
 
 export default function Destinations() {
   const destinationsArr = data.destinations
-
   const [currentDestination, setCurrentDestination] = useState('Moon')
-
   const destinationObj = destinationsArr.filter(destination => destination.name == currentDestination)[0]
-
+  
   const destinationsList = destinationsArr.map(des => {
-    console.log(des.name);
-    console.log("current: " + currentDestination);
     return (
       <li className="destination-li" key={des.name}>
         <input className="des-list-checkbox" 
@@ -28,7 +24,7 @@ export default function Destinations() {
   )})
 
   return (
-    <div className="Destinations">
+    <main className="Destinations">
       <h2><span className="number">01</span> Pick your destination</h2>
       <div className="destination-flex">
         <div className="destination-flex-left">
@@ -52,6 +48,6 @@ export default function Destinations() {
           </ul>
         </div>
       </div>
-    </div>
+    </main>
   )
 }

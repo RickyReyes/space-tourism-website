@@ -21,7 +21,7 @@ export default function Technology() {
   ))
 
   return (
-    <div className="Technology">
+    <main className="Technology">
       <h2><span className="number">03</span> Space launch 101</h2>
       <div className="tech-flex">
         <div className={"tech-image " + snakeCaseName + "-photo"}>
@@ -39,6 +39,6 @@ export default function Technology() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
