@@ -186,10 +186,11 @@ header {
   margin-top: 81px;
   text-transform: uppercase;
   text-decoration: none;
+  color: black;
   &:hover {
     box-shadow: 0px 0px 0px 40px rgba(white, 0.1);
   }
-  &:visited {
+  &:visited, &:active {
     color: black;
   }
 }
